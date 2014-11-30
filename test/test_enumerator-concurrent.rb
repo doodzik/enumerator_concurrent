@@ -46,6 +46,8 @@ class EnumeratorConcurrentTest < Minitest::Test
     assert_equal(t2, 4)
   end
 
-  # def test_extended_enumerator
-  # end
+  def test_extended_enumerator
+    assert_equal(Enumerator::Concurrent, [].concurrent.class)
+    assert_equal([1,2,3], [1,2,3].concurrent.list)
+  end
 end

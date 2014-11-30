@@ -2,6 +2,7 @@ require "Enumerator/Concurrent/version"
 
 class Enumerator::Concurrent
   attr_reader :list
+  
   def initialize(list)
     @list = list
   end
@@ -24,3 +25,7 @@ class Enumerator::Concurrent
   end
 
 end
+
+a = %q{def concurrent() Enumerator::Concurrent.new(self) end}
+Array.module_eval(a)
+a = nil
