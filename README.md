@@ -20,7 +20,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+  require 'enumerator/concurrent.rb'
+  
+  result = [1,2,3,4].concurrent.each { |x| x*2 }
+```
 
 ## Contributing
 
