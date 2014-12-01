@@ -1,0 +1,18 @@
+language: ruby
+rvm:
+    - 2.1.0
+    - jruby-18mode
+    - jruby-19mode
+    - rbx-2
+    - ruby-head
+    - jruby-head
+    - ree
+deploy:
+  provider: rubygems
+  api_key:
+    secure: Eyu3CHMeeY5TN3xgAP4r0d18uxIIY0NnOvmK4CykgKYDdzsT4DF4sqn7vJyBxbosWCxihqpHZHNkQ5NEtf2YZbUpCj9fybXo3a+EgXDVwCMj8MpXZ6ZtrlAP4ObQEjTwn4W8CcIZKkxCTTWH+ygEqGLQLRwBNLLP3sfhGzvSBuI=
+  gem: Enumerator-Concurrent
+  on:
+    all_branches: true
+    tags: true
+    repo: doodzik/Enumerator-Concurrent

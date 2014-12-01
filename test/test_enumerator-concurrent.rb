@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require 'enumerator/concurrent'
+require 'Enumerator/Concurrent'
 
 class ThreadMock
   attr_reader :joined, :valued

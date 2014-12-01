@@ -20,10 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-Enumerator::Concurrent inherits from Array
-
 ```ruby
-  require 'enumerator/concurrent.rb'
+  # Enumerator::Concurrent inherits from Array
+  require 'Enumerator/Concurrent'
   
   result = [1,2,3,4].concurrent.each { |x| x*2 }
 ```
