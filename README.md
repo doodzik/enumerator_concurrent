@@ -1,6 +1,6 @@
 # Enumerator::Concurrent
 
-TODO: Write a gem description
+every iteration of each is run in its own thread
 
 ## Installation
 
@@ -19,6 +19,8 @@ Or install it yourself as:
     $ gem install Enumerator-Concurrent
 
 ## Usage
+
+Enumerator::Concurrent inherits from Array
 
 ```ruby
   require 'enumerator/concurrent.rb'

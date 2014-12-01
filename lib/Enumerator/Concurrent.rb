@@ -1,27 +1,17 @@
 require "Enumerator/Concurrent/version"
 
-class Enumerator::Concurrent
-  attr_reader :list
-  
-  def initialize(list)
-    @list = list
-  end
+class Enumerator::Concurrent < Array
 
   def each(&block)
-    setup(&block).join.list
+    each_to_thread(&block).join_threads
   end
 
-  def join
-    Enumerator::Concurrent.new @list.map { |x| x.join.value }
+  def join_threads
+    Enumerator::Concurrent.new map { |x| x.join.value }
   end
 
-  private
-
-  def setup
-    threads = @list.map do |x|
-      Thread.new { yield(x) }
-    end
-    Enumerator::Concurrent.new threads
+  def each_to_thread 
+    Enumerator::Concurrent.new map { |x| Thread.new { yield(x) } }
   end
 
 end

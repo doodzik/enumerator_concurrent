@@ -5,7 +5,7 @@ require 'Enumerator/Concurrent/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "Enumerator-Concurrent"
-  spec.version       = Enumerator::Concurrent::VERSION
+  spec.version       = EnumeratorConcurrent::VERSION
   spec.authors       = ["doodzik"]
   spec.email         = ["frederik.dudzik@gmail.com"]
   spec.summary       = %q{Implements a concurrent each}

@@ -19,9 +19,9 @@ end
 
 class EnumeratorConcurrentTest < Minitest::Test
   def test_creates_list_of_threads
-    thread1, thread2 = Enumerator::Concurrent.new([2,3]).send(:setup) do |x|
+    thread1, thread2 = Enumerator::Concurrent.new([2,3]).each_to_thread do |x|
       x + 10
-    end.list
+    end
 
     assert(thread1.is_a? Thread)
     assert(thread2.is_a? Thread)
@@ -31,7 +31,7 @@ class EnumeratorConcurrentTest < Minitest::Test
 
   def test_joining_threads
     threads = [ ThreadMock.new, ThreadMock.new ]
-    t1, t2 = Enumerator::Concurrent.new(threads).join.list
+    t1, t2 = Enumerator::Concurrent.new(threads).join_threads
     assert(t1.joined)
     assert(t1.valued)
     assert(t2.joined)
@@ -48,6 +48,6 @@ class EnumeratorConcurrentTest < Minitest::Test
 
   def test_extended_enumerator
     assert_equal(Enumerator::Concurrent, [].concurrent.class)
-    assert_equal([1,2,3], [1,2,3].concurrent.list)
+    assert_equal([1,2,3], [1,2,3].concurrent)
   end
 end
