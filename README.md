@@ -1,7 +1,5 @@
 # Enumerator::Concurrent
 
-every iteration of each is run in its own thread
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -23,8 +21,22 @@ Or install it yourself as:
 ```ruby
   # Enumerator::Concurrent inherits from Array
   require 'Enumerator/Concurrent'
-  
-  result = [1,2,3,4].concurrent.each { |x| x*2 }
+
+  # every iteration is run in an own thread
+  [1,2,3,4].concurrent.each { |x| x*2 }
+  # => [2,4,6,8]
+
+  # specify how many threads should deal with the Enumerable.
+  queued = [1,2,3,4].concurrent.threads(2)
+
+  # doesn't preserve the structure
+  queued.each { |x| x*2 }
+  # => [1,2,3,4]
+
+  # preserves the structure
+  queued.map { |x| x*2 }
+  # => [2,4,6,8]
+
 ```
 
 ## Contributing
