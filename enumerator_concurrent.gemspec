@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'Enumerator/Concurrent/version'
+require 'enumerator_concurrent/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'Enumerator-Concurrent'
+  spec.name          = 'enumerator_concurrent'
   spec.version       = EnumeratorConcurrent::VERSION
   spec.authors       = ['doodzik']
   spec.email         = ['frederik.dudzik@gmail.com']
   spec.summary       = 'Implements a concurrent each'
   spec.description   = 'for each iteration a new thread is started.'\
                        'Then the started threads are joind'
-  spec.homepage      = 'https://github.com/doodzik/Enumerator-Concurrent.git'
+  spec.homepage      = 'https://github.com/doodzik/enumerator_concurrent.git'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split('\x0')
