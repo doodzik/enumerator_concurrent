@@ -48,7 +48,7 @@ Or install it yourself as:
 5. Create a new Pull Request
 
 
-The MIT License (MIT)
+## License (MIT)
 
 Copyright (c) 2014 Frederik Dudzik
 
