@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'enumerator_concurrent/threaded'
 
+# Mock for thread to see if thread was invoked
 class ThreadMock
   attr_reader :joined, :valued
   @joined = false
@@ -17,9 +18,11 @@ class ThreadMock
   end
 end
 
+# test Threaded
 class EnumeratorConcurrentTest < Minitest::Test
   def test_creates_list_of_threads
-    thread1, thread2 = EnumeratorConcurrent::Threaded.new([2, 3]).each_to_thread do |x|
+    threaded = EnumeratorConcurrent::Threaded.new([2, 3])
+    thread1, thread2 = threaded.each_to_thread do |x|
       x + 10
     end
 

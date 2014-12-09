@@ -1,4 +1,6 @@
 # enumerator_concurrent
+[![Build Status](https://travis-ci.org/doodzik/enumerator_concurrent.svg?branch=master)](https://travis-ci.org/doodzik/enumerator_concurrent)
+[![Stories in Ready](https://badge.waffle.io/doodzik/enumerator_concurrent.svg?label=ready&title=Ready)](http://waffle.io/doodzik/enumerator_concurrent)
 
 ## Installation
 

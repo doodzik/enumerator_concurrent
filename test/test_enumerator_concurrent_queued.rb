@@ -1,10 +1,11 @@
 require 'minitest/autorun'
 require 'enumerator_concurrent/queued'
 
+# Test for EnumeratorQueued
 class EnumeratorConcurrentQueuedTest < Minitest::Test
   def test_map_workers
     cq = EnumeratorConcurrent::Queued.new [1, 2, 3, 4], 2
-    assert_equal([2, 4, 6, 8], cq.map { |x| x*2 })
+    assert_equal([2, 4, 6, 8], cq.map { |x| x * 2 })
   end
 
   def test_each_workers

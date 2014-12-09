@@ -1,5 +1,2 @@
 require 'benchmark'
-require 'Enumerator/Concurrent'
-
-
-
+require 'enumerator_concurrent'

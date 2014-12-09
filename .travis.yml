@@ -1,12 +1,11 @@
 language: ruby
 rvm:
     - 2.1.0
-    - jruby-18mode
+    - 2.0.0
     - jruby-19mode
     - rbx-2
     - ruby-head
     - jruby-head
-    - ree
 deploy:
   provider: rubygems
   api_key:

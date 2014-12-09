@@ -1,6 +1,6 @@
 # Implements a Concurrent Each
-
 module EnumeratorConcurrent
+  # Each Iteration in an own Thread. Less overhead then Queued
   class Threaded < Array
     # @param &block [Block] takes a block an passes it to each_to_thread
     # @return [Array] as the standard each does
